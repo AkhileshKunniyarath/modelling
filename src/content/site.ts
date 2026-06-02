@@ -1,14 +1,18 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hanazmodelling.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.hanazevents.com";
 const logoPath = "/images/brand/hanaz-logo.png";
+const shareImagePath = "/images/brand/hanaz-events-share.png";
 
 export const site = {
   name: "Hanaz Modelling",
+  shareTitle: "Hanaz Events",
   handle: "@hanaz_modelling",
   url: siteUrl,
   description:
     "A premium black-and-gold modelling brand experience for portfolios, runway moments, editorials, applications, and collaborations.",
+  shareDescription:
+    "Luxury fashion events, runway showcases, model experiences, and brand collaborations crafted with a premium black-and-gold signature.",
   logo: logoPath,
-  shareImage: `${siteUrl}${logoPath}`,
+  shareImage: `${siteUrl}${shareImagePath}`,
   instagramUrl:
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
     "https://www.instagram.com/hanaz_modelling/",

@@ -30,17 +30,17 @@ export const metadata: Metadata = {
     apple: [{ url: site.logo, sizes: "180x180", type: "image/png" }]
   },
   openGraph: {
-    title: site.name,
-    description: site.description,
+    title: site.shareTitle,
+    description: site.shareDescription,
     url: site.url,
-    siteName: site.name,
-    images: [{ url: site.shareImage, width: 1200, height: 1200, alt: site.name }],
+    siteName: site.shareTitle,
+    images: [{ url: site.shareImage, width: 1200, height: 1200, alt: site.shareTitle }],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
-    description: site.description,
+    title: site.shareTitle,
+    description: site.shareDescription,
     images: [site.shareImage]
   },
   other: {

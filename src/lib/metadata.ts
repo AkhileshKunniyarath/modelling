@@ -8,16 +8,16 @@ export function pageMetadata(title: string, description = site.description, path
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${title} | ${site.name}`,
+      title: `${title} | ${site.shareTitle}`,
       description,
       url,
-      siteName: site.name,
-      images: [{ url: site.shareImage, width: 1200, height: 1200, alt: site.name }],
+      siteName: site.shareTitle,
+      images: [{ url: site.shareImage, width: 1200, height: 1200, alt: site.shareTitle }],
       type: "website"
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${site.name}`,
+      title: `${title} | ${site.shareTitle}`,
       description,
       images: [site.shareImage]
     },
