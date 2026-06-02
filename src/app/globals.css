@@ -509,6 +509,75 @@ textarea {
   text-transform: uppercase;
 }
 
+.home-marquee {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid rgba(201, 166, 70, 0.2);
+  background:
+    linear-gradient(90deg, rgba(201, 166, 70, 0.13), transparent 24%, transparent 76%, rgba(201, 166, 70, 0.13)),
+    rgba(8, 8, 8, 0.92);
+}
+
+.home-marquee::before,
+.home-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: min(18vw, 180px);
+  height: 100%;
+  pointer-events: none;
+}
+
+.home-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-bg), transparent);
+}
+
+.home-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-bg), transparent);
+}
+
+.home-marquee-track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+  padding: 17px 0;
+  color: rgba(248, 244, 234, 0.9);
+  font-family: var(--font-display);
+  font-size: clamp(0.76rem, 1.2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: homeMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.home-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.home-marquee-group span {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.home-marquee-group span::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--color-gold);
+  border-radius: 999px;
+  background: rgba(201, 166, 70, 0.32);
+  box-shadow: 0 0 18px rgba(201, 166, 70, 0.4);
+}
+
 .preloader {
   position: fixed;
   inset: 0;
@@ -1403,6 +1472,15 @@ textarea {
   }
 }
 
+@keyframes homeMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1420,6 +1498,11 @@ textarea {
 
   .scroll-progress {
     display: none;
+  }
+
+  .home-marquee-track {
+    animation: none;
+    transform: translateX(0);
   }
 }
 
@@ -1622,6 +1705,17 @@ textarea {
     gap: 10px 14px;
     font-size: 0.56rem;
     letter-spacing: 0.12em;
+  }
+
+  .home-marquee-track {
+    gap: 24px;
+    padding: 13px 0;
+    animation-duration: 22s;
+  }
+
+  .home-marquee-group,
+  .home-marquee-group span {
+    gap: 24px;
   }
 
   .navbar {

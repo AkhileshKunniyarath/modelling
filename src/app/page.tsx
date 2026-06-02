@@ -43,6 +43,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="home-marquee" aria-label="Hanaz Modelling highlights">
+        <div className="home-marquee-track">
+          <div className="home-marquee-group">
+            {["Runway", "Editorial", "Campaigns", "Portfolios", "Fashion Events", "Collaborations"].map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+          <div className="home-marquee-group" aria-hidden="true">
+            {["Runway", "Editorial", "Campaigns", "Portfolios", "Fashion Events", "Collaborations"].map((item) => (
+              <span key={`${item}-repeat`}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-tight brand-intro-section">
         <div className="container brand-intro">
           <div className="brand-emblem" aria-hidden="true">
