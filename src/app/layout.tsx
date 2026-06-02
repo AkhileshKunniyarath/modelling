@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { ScrollEffects } from "@/components/animations/ScrollEffects";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { SocialDock } from "@/components/layout/SocialDock";
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={poppins.variable}>
       <body>
         <div className="site-shell">
+          <ScrollEffects />
           <Navbar />
           <SocialDock />
           {children}

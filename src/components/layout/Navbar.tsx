@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { applicationUrl, site, whatsappUrl } from "@/content/site";
@@ -9,6 +9,25 @@ import { InstagramIcon, WhatsAppIcon } from "@/components/ui/SocialIcons";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
 
   function isActive(href: string) {
     if (href === "/") {
@@ -49,40 +68,50 @@ export function Navbar() {
           </Link>
         </div>
         <button
-          className="menu-button"
+          className={`menu-button${open ? " is-open" : ""}`}
           type="button"
           aria-label="Toggle navigation menu"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
-          {open ? "X" : "Menu"}
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
         </button>
       </div>
       {open ? (
-        <nav className="mobile-menu" aria-label="Mobile navigation">
-          <div className="mobile-menu-head">
-            <span>{site.name}</span>
-            <small>{site.handle}</small>
-          </div>
-          {site.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={isActive(item.href) ? "active" : undefined}
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="button-row">
-            <a className="btn" href={applicationUrl()} onClick={() => setOpen(false)}>
-              Apply Now
-            </a>
-            <a className="btn secondary" href={whatsappUrl()} onClick={() => setOpen(false)}>
-              WhatsApp
-            </a>
-          </div>
-        </nav>
+        <>
+          <button
+            className="mobile-menu-backdrop"
+            type="button"
+            aria-label="Close navigation menu"
+            onClick={() => setOpen(false)}
+          />
+          <nav className="mobile-menu" aria-label="Mobile navigation">
+            <div className="mobile-menu-head">
+              <span>{site.name}</span>
+              <small>{site.handle}</small>
+            </div>
+            {site.nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={isActive(item.href) ? "active" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="button-row">
+              <a className="btn" href={applicationUrl()} onClick={() => setOpen(false)}>
+                Apply Now
+              </a>
+              <a className="btn secondary" href={whatsappUrl()} onClick={() => setOpen(false)}>
+                WhatsApp
+              </a>
+            </div>
+          </nav>
+        </>
       ) : null}
     </header>
   );
