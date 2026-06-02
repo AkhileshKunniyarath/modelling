@@ -12,14 +12,21 @@ export function pageMetadata(title: string, description = site.description, path
       description,
       url,
       siteName: site.name,
-      images: [{ url: "/images/brand/hanaz-logo.png", width: 1200, height: 1200 }],
+      images: [{ url: site.shareImage, width: 1200, height: 1200, alt: site.name }],
       type: "website"
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${site.name}`,
       description,
-      images: [site.logo]
+      images: [site.shareImage]
+    },
+    other: {
+      "og:image": site.shareImage,
+      "og:image:secure_url": site.shareImage,
+      "og:image:type": "image/png",
+      "og:image:width": "1200",
+      "og:image:height": "1200"
     }
   };
 }

@@ -34,14 +34,21 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
     siteName: site.name,
-    images: [{ url: site.logo, width: 1200, height: 1200, alt: site.name }],
+    images: [{ url: site.shareImage, width: 1200, height: 1200, alt: site.name }],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
-    images: [site.logo]
+    images: [site.shareImage]
+  },
+  other: {
+    "og:image": site.shareImage,
+    "og:image:secure_url": site.shareImage,
+    "og:image:type": "image/png",
+    "og:image:width": "1200",
+    "og:image:height": "1200"
   }
 };
 

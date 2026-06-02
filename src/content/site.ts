@@ -1,10 +1,14 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hanazmodelling.com";
+const logoPath = "/images/brand/hanaz-logo.png";
+
 export const site = {
   name: "Hanaz Modelling",
   handle: "@hanaz_modelling",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://hanazmodelling.com",
+  url: siteUrl,
   description:
     "A premium black-and-gold modelling brand experience for portfolios, runway moments, editorials, applications, and collaborations.",
-  logo: "/images/brand/hanaz-logo.png",
+  logo: logoPath,
+  shareImage: `${siteUrl}${logoPath}`,
   instagramUrl:
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
     "https://www.instagram.com/hanaz_modelling/",
