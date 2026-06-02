@@ -20,7 +20,29 @@ export const metadata: Metadata = {
     default: site.name,
     template: `%s | ${site.name}`
   },
-  description: site.description
+  description: site.description,
+  icons: {
+    icon: [
+      { url: site.logo, type: "image/png" },
+      { url: site.logo, sizes: "32x32", type: "image/png" },
+      { url: site.logo, sizes: "192x192", type: "image/png" }
+    ],
+    apple: [{ url: site.logo, sizes: "180x180", type: "image/png" }]
+  },
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    images: [{ url: site.logo, width: 1200, height: 1200, alt: site.name }],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: [site.logo]
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

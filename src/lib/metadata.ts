@@ -18,7 +18,8 @@ export function pageMetadata(title: string, description = site.description, path
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${site.name}`,
-      description
+      description,
+      images: [site.logo]
     }
   };
 }
