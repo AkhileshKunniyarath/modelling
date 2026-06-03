@@ -15,7 +15,7 @@ export const site = {
   shareImage: `${siteUrl}${shareImagePath}`,
   instagramUrl:
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
-    "https://www.instagram.com/hanaz_modelling/",
+    "https://www.instagram.com/hanaz_events/",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918129370899",
   whatsappMessage:
     process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||

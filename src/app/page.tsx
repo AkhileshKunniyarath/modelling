@@ -3,6 +3,7 @@ import { Preloader } from "@/components/animations/Preloader";
 import { EditorialCard } from "@/components/cards/EditorialCard";
 import { EventCard } from "@/components/cards/EventCard";
 import { ModelCard } from "@/components/cards/ModelCard";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { editorials } from "@/content/editorials";
 import { events } from "@/content/events";
 import { models } from "@/content/models";
@@ -88,9 +89,10 @@ export default function Home() {
             </p>
           </div>
           <div className="framed-media">
-            <img
+            <OptimizedImage
               src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
               alt="Editorial fashion portrait for Hanaz Modelling brand story"
+              sizes="(max-width: 960px) calc(100vw - 40px), 520px"
             />
           </div>
         </div>
@@ -111,7 +113,11 @@ export default function Home() {
       <section className="section">
         <div className="container split-panel">
           <div className="framed-media">
-            <img src={events[0].posterImage} alt="Runway event highlight" />
+            <OptimizedImage
+              src={events[0].posterImage}
+              alt="Runway event highlight"
+              sizes="(max-width: 960px) calc(100vw - 40px), 520px"
+            />
           </div>
           <div className="split-copy">
             <span className="eyebrow">Runway Moments</span>
@@ -193,7 +199,11 @@ export default function Home() {
           <div className="gallery-strip" style={{ marginTop: 32 }}>
             {editorials.flatMap((item) => item.gallery).slice(0, 3).map((image, index) => (
               <a key={image} className="card image-card" href={site.instagramUrl} target="_blank" rel="noreferrer">
-                <img src={image} alt={`Curated Instagram-style Hanaz Modelling visual ${index + 1}`} />
+                <OptimizedImage
+                  src={image}
+                  alt={`Curated Instagram-style Hanaz Modelling visual ${index + 1}`}
+                  sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 960px) calc((100vw - 60px) / 2), 380px"
+                />
                 <div className="card-caption">
                   <h3>Follow Hanaz</h3>
                   <p>{site.handle}</p>

@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/metadata";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 export const metadata = pageMetadata("About", "Brand story, values, and modelling approach for Hanaz Modelling.", "/about");
 
@@ -23,7 +24,11 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="framed-media">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85" alt="Hanaz Modelling brand mood" />
+            <OptimizedImage
+              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85"
+              alt="Hanaz Modelling brand mood"
+              sizes="(max-width: 960px) calc(100vw - 40px), 520px"
+            />
           </div>
         </div>
       </section>

@@ -11,6 +11,48 @@ export type ModelProfile = {
 
 export const models: ModelProfile[] = [
   {
+    slug: "shilpa-b",
+    name: "Shilpa B",
+    category: "Fashion",
+    location: "Trivandrum",
+    heroImage: "/images/models/shilpa-b.png",
+    gallery: [
+      "/images/models/shilpa-b.png",
+      "/images/models/shilpa-b.png",
+      "/images/models/shilpa-b.png"
+    ],
+    bio: "A confident fashion profile from Trivandrum with a poised camera presence and elegant styling potential.",
+    featured: true
+  },
+  {
+    slug: "vipin-kumar",
+    name: "Vipin Kumar",
+    category: "Runway",
+    location: "Trivandrum",
+    heroImage: "/images/models/vipin-kumar.png",
+    gallery: [
+      "/images/models/vipin-kumar.png",
+      "/images/models/vipin-kumar.png",
+      "/images/models/vipin-kumar.png"
+    ],
+    bio: "A sharp runway profile from Trivandrum with a strong formal presence and confident event-ready styling.",
+    featured: true
+  },
+  {
+    slug: "joshni-stephen",
+    name: "Joshni Stephen",
+    category: "Fashion",
+    location: "Trivandrum",
+    heroImage: "/images/models/joshni-stephen.png",
+    gallery: [
+      "/images/models/joshni-stephen.png",
+      "/images/models/joshni-stephen.png",
+      "/images/models/joshni-stephen.png"
+    ],
+    bio: "A graceful fashion profile from Trivandrum with expressive styling, elegant stage presence, and strong portrait appeal.",
+    featured: true
+  },
+  {
     slug: "arya-sen",
     name: "Arya Sen",
     category: "Runway",
@@ -23,7 +65,7 @@ export const models: ModelProfile[] = [
       "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85"
     ],
     bio: "A poised runway presence shaped for fashion showcases, launches, and editorial-led campaigns.",
-    featured: true
+    featured: false
   },
   {
     slug: "meera-khan",
@@ -38,7 +80,7 @@ export const models: ModelProfile[] = [
       "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85"
     ],
     bio: "Editorial styling, expressive portraiture, and premium campaign versatility.",
-    featured: true
+    featured: false
   },
   {
     slug: "nia-rao",
@@ -53,7 +95,7 @@ export const models: ModelProfile[] = [
       "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=85"
     ],
     bio: "Brand-friendly commercial energy with clean styling and strong camera confidence.",
-    featured: true
+    featured: false
   }
 ];
 
